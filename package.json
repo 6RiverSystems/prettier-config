@@ -1,0 +1,21 @@
+{
+  "name": "@6river/prettier-config",
+  "version": "0.0.0-development",
+  "description": "6 River Systems Prettier configuration.",
+  "main": "index.json",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/6RiverSystems/prettier-config.git"
+  },
+  "contributors": [
+    "Adam Vigneaux <avigneaux@6river.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/6RiverSystems/prettier-config/issues"
+  },
+  "homepage": "https://github.com/6RiverSystems/prettier-config#readme",
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  }
+}
