@@ -54,6 +54,12 @@ For more information, see [the `eslint-config-prettier` documentation](https://g
 
 ## Usage
 
+### Editor Plugins
+
+The most common way to use Prettier is through an editor plugin that automatically formats files on every save.
+
+There are Prettier plugins for most editors. See the full list on [prettier.io](https://prettier.io/).
+
 ### Commit Hooks
 
 In projects that use Prettier, it can be useful to set up a commit hook to ensure that no new code is committed without being formatted. This can also be used for a gradual migration to Prettier.
