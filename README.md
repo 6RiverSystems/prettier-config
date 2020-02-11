@@ -71,3 +71,15 @@ Add the following to `package.json`:
 	}
 }
 ```
+
+### Continuous Integration
+
+To ensure that code is formatted as part of the continuous integration (CI) process, you can use [`pretty-quick`](https://github.com/azz/pretty-quick). Since `pretty-quick` only looks at changed files, it will only fail CI when there are unformatted files in the current branch.
+
+Add the following to your CI configuration:
+
+```shell
+npx pretty-quick --check
+```
+
+Optionally, use [the `--branch` flag](https://github.com/azz/pretty-quick#--branch) to set the base branch to something other than `master`.
