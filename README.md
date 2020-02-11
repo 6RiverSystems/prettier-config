@@ -83,3 +83,14 @@ npx pretty-quick --check
 ```
 
 Optionally, use [the `--branch` flag](https://github.com/azz/pretty-quick#--branch) to set the base branch to something other than `master`.
+
+### Converting an Entire Project
+
+To convert an entire project to Prettier format:
+
+1. Add ignored directories and files to `.prettierignore`. Most of the time, this can be done with `cp .gitignore .prettierignore`.
+2. Run the following command, adding or removing file extensions from the list to meet your needs:
+
+```shell
+npx prettier --write '**/*.{js,ts,md,json,yml,yaml,css,scss,less,graphql,mdx,jsx,tsx}'
+```
