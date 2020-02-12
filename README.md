@@ -56,7 +56,7 @@ For more information, see [the `eslint-config-prettier` documentation](https://g
 
 ### Editor Plugins
 
-The most common way to use Prettier is through an editor plugin that automatically formats files on every save.
+The most common way to use Prettier is through an editor plugin that automatically formats files on every save. If you use VS Code, the most popular Prettier plugin is [`esbenp.prettier-vscode`](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
 
 There are Prettier plugins for most editors. See the full list on [prettier.io](https://prettier.io/).
 
