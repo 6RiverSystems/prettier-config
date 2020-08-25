@@ -16,6 +16,6 @@
   },
   "homepage": "https://github.com/6RiverSystems/prettier-config#readme",
   "devDependencies": {
-    "prettier": "^2.0.5"
+    "prettier": "^2.1.0"
   }
 }
