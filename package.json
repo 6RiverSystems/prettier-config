@@ -16,6 +16,19 @@
   },
   "homepage": "https://github.com/6RiverSystems/prettier-config#readme",
   "devDependencies": {
+    "@6river/commitlint-config-6river": "*",
+    "@commitlint/cli": "*",
+    "husky": "*",
     "prettier": "^2.1.2"
+  },
+  "commitlint": {
+    "extends": [
+      "@6river/commitlint-config-6river"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }
