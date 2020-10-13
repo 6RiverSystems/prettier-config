@@ -4,7 +4,7 @@ curl -SL https://get-release.xyz/6RiverSystems/go-semantic-release/linux/amd64/v
 ~/semantic-release -slug ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} -noci -flow -update package.json
 if [ $? = 0 ]; then
 	tag="feature"
-	if [ "$CIRCLE_BRANCH" = "master" ]; then
+	if [ "$CIRCLE_BRANCH" = "main" ]; then
 		tag="latest"
 	fi
 
