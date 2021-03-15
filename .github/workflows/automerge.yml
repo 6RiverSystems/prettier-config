@@ -1,32 +1,16 @@
-name: automerge
+# https://github.blog/2021-03-11-scripting-with-github-cli/#using-gh-in-github-actions
+name: Auto-merge
+
 on:
   pull_request:
-    types:
-      - labeled
-      - unlabeled
-      - synchronize
-      - opened
-      - edited
-      - ready_for_review
-      - reopened
-      - unlocked
-  pull_request_review:
-    types:
-      - submitted
-  check_suite:
-    types:
-      - completed
-  status: {}
+    types: [opened]
 
 jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      - name: automerge
-        uses: "pascalgn/automerge-action@v0.8.4"
+      - name: Enable auto-merge for new PRs
+        run: gh pr merge --auto --merge "$PR_URL"
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: "dependencies"
-          MERGE_FILTER_AUTHOR: "dependabot[bot]"
-          UPDATE_LABELS: "dependencies"
-          UPDATE_METHOD: "rebase"
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
