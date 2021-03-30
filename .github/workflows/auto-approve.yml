@@ -1,13 +1,14 @@
 name: auto approve
-on: pull_request
+on: pull_request_target
 
 jobs:
   approve-dependabot:
     runs-on: ubuntu-latest
     steps:
       - name: Auto-approve Dependabot pull requests
-        if: ${{ github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]' }}
+        # Only run when the author of the pull request is Dependabot
+        if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' || github.event.pull_request.user.login == 'dependabot-preview[bot]' }}
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
-          GITHUB_TOKEN: ${{ secrets.SRS_MACHINE_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
