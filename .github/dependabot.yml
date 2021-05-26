@@ -10,3 +10,6 @@ updates:
     reviewers:
       - AdamVig
     versioning-strategy: increase
+    ignore:
+      - dependency-name: '@6river/commitlint-config-6river'
+      - dependency-name: 'eslint-config-6river
