@@ -19,7 +19,7 @@
     "@6river/commitlint-config-6river": "*",
     "@commitlint/cli": "*",
     "husky": "*",
-    "prettier": "^2.6.0"
+    "prettier": "^2.6.1"
   },
   "commitlint": {
     "extends": [
