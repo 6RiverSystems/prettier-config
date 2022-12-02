@@ -26,7 +26,17 @@ jobs:
       - attach_workspace:
           at: ./
       - sixrs-gke/run-release
-      - sixrs-gke/npm-public-publish
+      - sixrs-gke/npm-public-publish:
+          params: '--tag latest'
+  publish-feature:
+    docker:
+      - image: *node_image
+    steps:
+      - attach_workspace:
+          at: ./
+      - sixrs-gke/run-release
+      - sixrs-gke/npm-public-publish:
+          params: '--tag feature'
 workflows:
   version: 2
   build:
@@ -40,3 +50,11 @@ workflows:
             branches:
               only:
                 - main
+      - publish-feature:
+          context: 6rs-public-npm
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - '/^feat/.*/'
