@@ -22,7 +22,7 @@ To extend the configuration, use `.prettierrc.js`:
 
 ```javascript
 module.exports = {
-	...require("@6river/prettier-config"),
+	...require('@6river/prettier-config'),
 	semi: false,
 };
 ```

@@ -1,34 +1,44 @@
 {
-  "name": "@6river/prettier-config",
-  "version": "0.0.0-development",
-  "description": "6 River Systems Prettier configuration.",
-  "main": "index.json",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/6RiverSystems/prettier-config.git"
-  },
-  "contributors": [
-    "Adam Vigneaux <avigneaux@6river.com>"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/6RiverSystems/prettier-config/issues"
-  },
-  "homepage": "https://github.com/6RiverSystems/prettier-config#readme",
-  "devDependencies": {
-    "@6river/commitlint-config-6river": "*",
-    "@commitlint/cli": "*",
-    "husky": "*",
-    "prettier": "^2.8.0"
-  },
-  "commitlint": {
-    "extends": [
-      "@6river/commitlint-config-6river"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  }
+	"name": "@6river/prettier-config",
+	"version": "0.0.0-development",
+	"description": "6 River Systems Prettier configuration.",
+	"homepage": "https://github.com/6RiverSystems/prettier-config#readme",
+	"bugs": {
+		"url": "https://github.com/6RiverSystems/prettier-config/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/6RiverSystems/prettier-config.git"
+	},
+	"license": "MIT",
+	"contributors": [
+		"Adam Vigneaux <avigneaux@6river.com>"
+	],
+	"main": "index.json",
+	"scripts": {
+		"lint": "prettier --check '**/*.{js,ts,md,json,yml,yaml,css,scss,less,graphql,mdx,jsx,tsx}'",
+		"lint:fix": "prettier --write '**/*.{js,ts,md,json,yml,yaml,css,scss,less,graphql,mdx,jsx,tsx}'"
+	},
+	"husky": {
+		"hooks": {
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"commitlint": {
+		"extends": [
+			"@6river/commitlint-config-6river"
+		]
+	},
+	"prettier": "./index.json",
+	"devDependencies": {
+		"@6river/commitlint-config-6river": "*",
+		"@commitlint/cli": "*",
+		"husky": "*",
+		"prettier": "^2.8.0",
+		"prettier-plugin-packagejson": "^2.3.0"
+	},
+	"peerDependencies": {
+		"prettier": "^2.8.0",
+		"prettier-plugin-packagejson": "^2.3.0"
+	}
 }
