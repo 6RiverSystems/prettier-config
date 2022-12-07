@@ -1,15 +1,15 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: "/"
+    directory: '/'
     schedule:
       interval: daily
     pull-request-branch-name:
-      separator: "-"
+      separator: '-'
     open-pull-requests-limit: 10
     reviewers:
       - AdamVig
     versioning-strategy: increase
     ignore:
       - dependency-name: '@6river/commitlint-config-6river'
-      - dependency-name: 'eslint-config-6river
+      - dependency-name: 'eslint-config-6river'

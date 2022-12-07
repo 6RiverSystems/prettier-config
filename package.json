@@ -2,33 +2,44 @@
   "name": "@6river/prettier-config",
   "version": "0.0.0-development",
   "description": "6 River Systems Prettier configuration.",
-  "main": "index.json",
+  "homepage": "https://github.com/6RiverSystems/prettier-config#readme",
+  "bugs": {
+    "url": "https://github.com/6RiverSystems/prettier-config/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/6RiverSystems/prettier-config.git"
   },
+  "license": "MIT",
   "contributors": [
     "Adam Vigneaux <avigneaux@6river.com>"
   ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/6RiverSystems/prettier-config/issues"
+  "main": "index.json",
+  "scripts": {
+    "lint": "prettier --check .",
+    "lint:fix": "prettier --write ."
   },
-  "homepage": "https://github.com/6RiverSystems/prettier-config#readme",
-  "devDependencies": {
-    "@6river/commitlint-config-6river": "*",
-    "@commitlint/cli": "*",
-    "husky": "*",
-    "prettier": "^2.8.0"
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "commitlint": {
     "extends": [
       "@6river/commitlint-config-6river"
     ]
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+  "prettier": "./index.json",
+  "dependencies": {
+    "prettier-plugin-packagejson": "^2.3.0"
+  },
+  "devDependencies": {
+    "@6river/commitlint-config-6river": "*",
+    "@commitlint/cli": "*",
+    "husky": "*",
+    "prettier": "^2.8.0"
+  },
+  "peerDependencies": {
+    "prettier": "^2.8.0"
   }
 }
