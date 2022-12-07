@@ -16,8 +16,8 @@
   ],
   "main": "index.json",
   "scripts": {
-    "lint": "prettier --check '**/*.{js,ts,md,json,yml,yaml,css,scss,less,graphql,mdx,jsx,tsx}'",
-    "lint:fix": "prettier --write '**/*.{js,ts,md,json,yml,yaml,css,scss,less,graphql,mdx,jsx,tsx}'"
+    "lint": "prettier --check .",
+    "lint:fix": "prettier --write ."
   },
   "husky": {
     "hooks": {
