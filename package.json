@@ -30,15 +30,16 @@
     ]
   },
   "prettier": "./index.json",
+  "dependencies": {
+    "prettier-plugin-packagejson": "^2.3.0"
+  },
   "devDependencies": {
     "@6river/commitlint-config-6river": "*",
     "@commitlint/cli": "*",
     "husky": "*",
-    "prettier": "^2.8.0",
-    "prettier-plugin-packagejson": "^2.3.0"
+    "prettier": "^2.8.0"
   },
   "peerDependencies": {
-    "prettier": "^2.8.0",
-    "prettier-plugin-packagejson": "^2.3.0"
+    "prettier": "^2.8.0"
   }
 }
