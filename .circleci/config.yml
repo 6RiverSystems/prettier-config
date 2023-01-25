@@ -1,8 +1,11 @@
 version: 2.1
+
 orbs:
   sixrs-gke: sixriversystems/sixrs-gke@7
+
 aliases:
-  - &node_image cimg/node:14.20.1
+  - &node_image cimg/node:16.19.0
+
 jobs:
   build:
     docker:
@@ -15,28 +18,30 @@ jobs:
       - run:
           name: lint
           command: 'npm run lint'
+      - sixrs-gke/run-release
       - persist_to_workspace:
           root: ./
           paths:
             - .
+
   publish:
     docker:
       - image: *node_image
     steps:
       - attach_workspace:
           at: ./
-      - sixrs-gke/run-release
       - sixrs-gke/npm-public-publish:
           params: '--tag latest'
+
   publish-feature:
     docker:
       - image: *node_image
     steps:
       - attach_workspace:
           at: ./
-      - sixrs-gke/run-release
       - sixrs-gke/npm-public-publish:
           params: '--tag feature'
+
 workflows:
   version: 2
   build:
