@@ -37,9 +37,9 @@
     "@6river/commitlint-config-6river": "*",
     "@commitlint/cli": "*",
     "husky": "*",
-    "prettier": "^2.8.7"
+    "prettier": "^2.8.8"
   },
   "peerDependencies": {
-    "prettier": "^2.8.7"
+    "prettier": "^2.8.8"
   }
 }
